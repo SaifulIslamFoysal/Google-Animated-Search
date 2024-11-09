@@ -1,0 +1,80 @@
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: aliceblue;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    background-color: #f1f3f4;
+    box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.2);
+    width: 300px;
+    height: 45px;
+    border-radius: 24px;
+    padding: 0 20px;
+    transition: width 0.3s ease, padding 0.3s ease;
+    position: relative;
+    transition: 0.8s ease-in-out;
+}
+
+.img-1 {
+    width: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: absolute;
+    left: 8px;
+}
+
+.img-2 {
+    width: 20px;
+    cursor: pointer;
+    transition: width 0.4s ease;
+    transition-delay: 1s;
+}
+
+.text {
+    flex-grow: 1;
+    background-color: transparent;
+    border: none;
+    padding: 14px;
+    font-size: 16px;
+    outline: none;
+    color: #202124;
+    transition: width 0.3s ease, opacity 0.3s ease;
+    width: 100%;
+}
+
+input{
+    transition: width 0.4s ease;
+    transition-delay: 1s;
+    width: 100%;
+}
+
+.text::placeholder {
+    color: #5f6368;
+}
+
+.container.active {
+    width: 50px;
+    padding: 0;
+}
+
+.container.active .text {
+    width: 0;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.container.active .img-2 {
+    width: 0;
+}
+
+.container.active .img-1 {
+    left: 50%;
+    transform: translateX(-50%);
+}
